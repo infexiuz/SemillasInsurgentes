@@ -5,84 +5,61 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Semillas Insurgentes Catálogo</title>
-   <meta name="description"
-      content="Explora los catálogos de Semillas Insurgentes. Descubre nuestras opciones de semillas tropicales y subtropicales para tu cultivo.">
-   <meta name="author" content="Semillas Insurgentes">
-   <meta name="keywords"
-      content="Semillas tropicales, Semillas subtropicales, Catálogo de semillas, Agricultura, Cultivo, Semillas Insurgentes">
-   <meta name="robots" content="index, follow">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="theme-color" content="#323639">
-   <meta property="og:title" content="Catálogo de Semillas Insurgentes">
-   <meta property="og:description"
-      content="Consulta nuestros catálogos de semillas tropicales y subtropicales diseñados para los mejores cultivos.">
-   <meta property="og:type" content="website">
-   <meta property="og:url" content="https://semillas-insurgentes.com">
-   <meta property="og:image" content="https://semillas-insurgentes.com/logo.jpg">
    <style>
       body,
       html {
          margin: 0;
          padding: 0;
          height: 100%;
-         overflow: hidden;
-      }
-
-      main {
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-         height: 100vh;
-         width: 100vw;
-      }
-
-      iframe {
-         width: 100%;
-         height: 100%;
-         border: none;
+         font-family: Arial, sans-serif;
       }
 
       header {
          display: flex;
-         padding: 5px;
+         padding: 10px;
          justify-content: space-between;
          align-items: center;
          background-color: #323639;
       }
 
       button {
-         width: 49%;
-         padding: 15px;
+         width: 48%;
+         padding: 10px;
          color: white;
          background-color: #995905;
-         border-radius: 8px;
-         border: 1px solid #623f10;
+         border: none;
+         border-radius: 5px;
          font-weight: bold;
          text-transform: uppercase;
-         letter-spacing: .5px;
          cursor: pointer;
       }
 
-      button:focus {
+      button:hover {
          background-color: #623f10;
+      }
+
+      iframe {
+         width: 100%;
+         height: calc(100% - 60px);
+         /* Resta la altura del header */
+         border: none;
       }
    </style>
 </head>
 
 <body>
    <header>
-      <button type="button" onclick="cargarPDF('./catalogo-tropical.pdf')">Tropical</button>
-      <button type="button" onclick="cargarPDF('./catalogo-subtropico.pdf')">Sub-Tropico</button>
+      <button
+         onclick="cargarPDF('https://docs.google.com/gview?embedded=true&url=https://tusitio.com/catalogo-tropical.pdf')">Tropical</button>
+      <button
+         onclick="cargarPDF('https://docs.google.com/gview?embedded=true&url=https://tusitio.com/catalogo-subtropico.pdf')">Sub-Tropical</button>
    </header>
-   <main>
-      <iframe id="visorPDF" src="./catalogo-tropical.pdf" allowfullscreen></iframe>
-   </main>
+   <iframe id="visorPDF" src="https://docs.google.com/gview?embedded=true&url=https://tusitio.com/catalogo-tropical.pdf"
+      allowfullscreen></iframe>
 
    <script>
-      function cargarPDF(ruta) {
-         const iframe = document.getElementById('visorPDF');
-         iframe.src = ruta;
+      function cargarPDF(url) {
+         document.getElementById('visorPDF').src = url;
       }
    </script>
 </body>
